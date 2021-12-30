@@ -1,22 +1,36 @@
 import { Injectable } from '@angular/core';
-import { io, Socket } from 'socket.io-client';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { io } from "socket.io-client";
 
-@Injectable({
-  providedIn: 'root'
+Injectable({
+  providedIn: 'root',
 })
-export class SocketService {
+export class SocketService   {
 
-  private socket:Socket = io('http://pluto:8001');
+  public message$: BehaviorSubject<string> = new BehaviorSubject('');
 
-  constructor() { 
-    
-    console.log('service init');
-    this.socket.on("user:init",(args)=>{
+  constructor() {
 
-        console.log(args);
-
+    this.socket.on("user:init",message=>{
+      console.log(message);
+    });
+    this.socket.on("items",message=>{
+      console.log(message);
     });
 
   }
 
+  socket = io("http://192.168.178.14:8001");
+
+  public sendMessage(message:any) {
+    this.socket.emit('message', message);
+  }
+
+  public getNewMessage = () => {
+    this.socket.on('message', (message) =>{
+      this.message$.next(message);
+    });
+    
+    return this.message$.asObservable();
+  };
 }
