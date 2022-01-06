@@ -1,36 +1,39 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { io } from "socket.io-client";
+import { StoreService } from "./store.service";
 
-Injectable({
+@Injectable({
   providedIn: 'root',
 })
 export class SocketService   {
 
-  public message$: BehaviorSubject<string> = new BehaviorSubject('');
+  public socket = io("http://192.168.178.14:8001");
 
-  constructor() {
+  constructor(public store:StoreService) {
 
-    this.socket.on("user:init",message=>{
-      console.log(message);
-    });
-    this.socket.on("items",message=>{
-      console.log(message);
-    });
+    this.socket.emit("token",{token:"sekrit"});
 
   }
 
-  socket = io("http://192.168.178.14:8001");
+  public emit(event:string,message:any) {
 
-  public sendMessage(message:any) {
-    this.socket.emit('message', message);
+    const token = this.store.getToken();
+
+    this.socket.emit(event,{token:token,message:message})
+
   }
 
-  public getNewMessage = () => {
-    this.socket.on('message', (message) =>{
-      this.message$.next(message);
-    });
+  // public sendMessage(message:any) {
+  //   this.socket.emit('message', message);
+  // }
+
+  // public getNewMessage = () => {
+  //   this.socket.on('message', (message) =>{
+  //     this.message$.next(message);
+  //   });
     
-    return this.message$.asObservable();
-  };
+  //   return this.message$.asObservable();
+  // };
+
 }

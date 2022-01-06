@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { SocketService } from './services/socket.service';
+import { NavTopComponent } from './components/nav-top/nav-top.component';
+import { DataService } from './services/data.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,6 +10,7 @@ import { SocketService } from './services/socket.service';
 })
 export class AppComponent {
 
-  constructor(private socket:SocketService){}
+  constructor(private socket:SocketService, private data:DataService){}
   title = 'eu-int-angular';
+
 }
