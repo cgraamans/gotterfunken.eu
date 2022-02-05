@@ -12,16 +12,24 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavTopComponent } from './components/nav-top/nav-top.component';
 import { HTTP404Component } from './pages/http404/http404.component'
 
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import { BannerComponent } from './components/banner/banner.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     NavTopComponent,
-    HTTP404Component
+    HTTP404Component,
+    BannerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule
   ],
   providers: [SocketService,DataService,StoreService],
   bootstrap: [AppComponent]

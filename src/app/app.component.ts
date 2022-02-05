@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { SocketService } from './services/socket.service';
-import { NavTopComponent } from './components/nav-top/nav-top.component';
 import { DataService } from './services/data.service';
+
+import { NavTopComponent } from './components/nav-top/nav-top.component';
+import { BannerComponent } from './components/banner/banner.component';
 
 @Component({
   selector: 'app-root',

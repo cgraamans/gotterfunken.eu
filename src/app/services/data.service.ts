@@ -9,11 +9,14 @@ import { SocketService } from './socket.service';
 export class DataService {
 
   public isLoggedIn:BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  public isBannerMinimized:BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(store: StoreService, socket:SocketService) { 
 
     socket.emit("test",{test:true});
 
   }
+
+
 
 }

@@ -1,16 +1,7 @@
-<div id="nav-top">
-    <div class="nav-canvas">
-        <a routerLink="/" class="logo">
-            <img src="../../../assets/g-logo-large.png" height="64px">
-            Gotterfunken.eu
-        </a>
-        <a routerlink="/" class = "menu" *ngIf="!isLoggedIn">
-            <span class="material-icons">
-                done
-                </span>
-                        </a>
-        <a routerlink="/" class = "menu" *ngIf="isLoggedIn">
-            USER MENU
-        </a>
-    </div>
-</div>
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span><img src="/assets/g-logo.png" height="56"/>Second Line</span>
+        <span class="example-spacer"></span>
+        <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">verified_user</mat-icon>
+    </mat-toolbar-row>
+</mat-toolbar>
