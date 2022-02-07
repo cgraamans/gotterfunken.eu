@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FeedsRoutingModule } from './feeds-routing.module';
 import { FeedsComponent } from './components/feeds/feeds.component';
 import { FgComponent } from './components/fg/fg.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { FgComponent } from './components/fg/fg.component';
   ],
   imports: [
     CommonModule,
-    FeedsRoutingModule
+    FeedsRoutingModule,    
+    MatTabsModule
   ]
 })
 export class NewsModule { }
