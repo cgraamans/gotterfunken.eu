@@ -16,10 +16,15 @@ import { IndexComponent } from './pages/index/index.component'
 
 import { BannerComponent } from './components/banner/banner.component';
 
+import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
+
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { EventsComponent } from './components/events/events.component';
+import { NetworkComponent } from './components/network/network.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +32,9 @@ import { MatButtonModule } from '@angular/material/button';
     NavTopComponent,
     HTTP404Component,
     BannerComponent,
-    IndexComponent
+    IndexComponent,
+    EventsComponent,
+    NetworkComponent
   ],
   imports: [
 
@@ -39,6 +46,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule,
     MatTabsModule,
     MatButtonModule,
+    MatSlideToggleModule,
+    NgxBootstrapIconsModule.pick(DataService.icons)
     
   ],
   providers: [SocketService,DataService,StoreService],

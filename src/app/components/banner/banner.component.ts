@@ -10,7 +10,8 @@ import { DataService } from '../../services/data.service';
 })
 export class BannerComponent implements OnInit {
 
-  private URLBanner:BehaviorSubject<string> = new BehaviorSubject('http://pluto:8001/banners/bannerNewsEU.png')
+  private URLBanner:BehaviorSubject<string> = new BehaviorSubject('http://localhost:8001/banners/bannerNewsEU.png')
+  public icons = DataService.getIcons();
 
   public isMinimized:boolean = false;
 

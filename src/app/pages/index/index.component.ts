@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatGridListModule, MatGridList } from '@angular/material/grid-list';
+import { EventsComponent } from 'src/app/components/events/events.component';
+import { NetworkComponent } from 'src/app/components/network/network.component';
 
 @Component({
   selector: 'app-index',

@@ -2,20 +2,19 @@
     flex: 1 1 auto;
 }
 
+.spacer-small {
+    flex: 0.1 1 auto;
+}
+
+.slider {
+    padding: 16px; 
+    vertical-align: top;
+}
+
 a {
-    color:#FFF;
-    text-decoration: none;
-    font-size: 0.8em;
+    color: #FFF;
+    font-variant: small-caps;
 }
-
-.icons {
-
-    width:10vw;
-    text-align: right;
-    padding-top:10px;
-
-}
-
 
 a.primary-logo {
 
@@ -32,4 +31,12 @@ a.primary-logo {
     width: 42px;
     height: 42px;
     display: inline-block;
+}
+
+::ng-deep .mat-slide-toggle.mat-primary.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color: #ff99ff;
+}
+
+.mat-toolbar-row {
+    overflow: hidden;
 }
